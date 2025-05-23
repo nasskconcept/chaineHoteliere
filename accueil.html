@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Choix d'Hôtel</title>
+  <style>
+    /* Animation background */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      backdrop-filter: brightness(1.2);
+      border-radius: 12px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0.5rem 0 1.5rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      box-sizing: border-box;
+    }
+
+    .hotel-card {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 320px;
+      color: #333;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .hotel-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .hotel-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Overlay on hover */
+    .hotel-card .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      transition: opacity .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hotel-card:hover .overlay {
+      opacity: 1;
+    }
+    .overlay a {
+      background: #ff6f61;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hotel-card .description {
+      padding: 1rem;
+      text-align: left;
+    }
+    .hotel-card h2 {
+      margin: 0 0 0.5rem;
+      font-size: 1.5rem;
+      color: #1e3c72;
+    }
+    .hotel-card p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .container { padding: 1rem; gap: 1rem; }
+      .hotel-card { width: 100%; max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bienvenue dans nos Hôtels d’Exception</h1>
+    <p>Choisissez entre l’aventure sous-marine et l’évasion cosmique</p>
+  </header>
+
+  <div class="container">
+    <!-- Hôtel Nautilus -->
+    <div class="hotel-card">
+      <img src="nautilus.png" alt="Hôtel Nautilus">
+      <div class="overlay">
+        <a href="https://nasskconcept.github.io/nautilus/">Découvrir</a>
+      </div>
+      <div class="description">
+        <h2>Hôtel Nautilus</h2>
+        <p>Plongez dans un univers marin enchanteur, à mi-chemin entre luxe et exploration des fonds sous-marins.</p>
+      </div>
+    </div>
+
+    <!-- Hôtel Galaxia -->
+    <div class="hotel-card">
+      <img src="galaxia.png" alt="Hôtel Galaxia">
+      <div class="overlay">
+        <a href="https://arizig.github.io/testhotel/">Découvrir</a>
+      </div>
+      <div class="description">
+        <h2>Hôtel Galaxia</h2>
+        <p>Voyagez au cœur de la galaxie dans une station spatiale haut de gamme, avec vue imprenable sur les étoiles.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
